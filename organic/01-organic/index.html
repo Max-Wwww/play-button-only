@@ -475,6 +475,9 @@ const experimentVideo = document.getElementById("experimentVideo");
 const videoSource = document.getElementById("videoSource");
 const playPauseBtn = document.getElementById("playPauseBtn");
 
+experimentVideo.addEventListener("ended", function () {
+  window.parent.postMessage("videoFinished", "*");
+});
 let maxWatchedTime = 0;
 
 playPauseBtn.addEventListener("click", function () {
